@@ -1,47 +1,37 @@
 package model.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
 import model.entity.UserBean;
 
 public class UserDAO {
-	
-	public List<UserBean> selectAll() throws SQLException, ClassNotFoundException {
 
-		List<UserBean> UserList = new ArrayList<UserBean>();
+	public UserBean select(String userid, String password)
+			throws ClassNotFoundException, SQLException {
+
+		String sql = "SELECT * FROM m_user WHERE user_id = ? AND password = ?";
 
 		try (Connection con = ConnectionManager.getConnection();
-				Statement stmt = con.createStatement();
-				ResultSet res = stmt.executeQuery("SELECT user_id, password, user_name FROM m_user")) {
+				PreparedStatement pstmt = con.prepareStatement(sql)) {
 
-			// プレースホルダへの値の設定
+			pstmt.setString(1, userid);
+			pstmt.setString(2, password);
 
-			// SQLステートメントの実行
+			ResultSet rs = pstmt.executeQuery();
 
-			while (res.next()) {
-				String user_id = res.getString("user_id");
-				String password = res.getString("password");
-				String user_name = res.getString("user_name");
-
+			if (rs.next()) {
 				UserBean user = new UserBean();
-				
-				user.setId(user_id);
-				user.setPw(password);
-				user.setName(user_name);
-
-				UserList.add(user);
+				// DBのカラム名に合わせて修正（例）
+				user.setId(rs.getString("user_id"));
+				user.setPw(rs.getString("password"));
+				user.setName(rs.getString("user_name"));
+				return user;
+			} else {
+				return null;
 			}
-
-			return UserList;
-
 		}
-		}
-	
-	
-
+	}
 }
