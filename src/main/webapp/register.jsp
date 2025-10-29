@@ -54,8 +54,8 @@
 		
 		<input type="submit" value="登録実行">
 	</form>
-	<form action="task_display.jsp" method="POST">
-		<input type="submit" value="一覧画面へ">
+	<form action="menu.jsp" method="POST">
+		<input type="submit" value="メニュー画面へ">
 	</form>
 </body>
 </html>
