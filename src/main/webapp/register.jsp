@@ -9,18 +9,44 @@
 <body>
 	<h1>タスク登録画面</h1>
 	<hr>
-		<form action="task-add-servlet" method="POST">
-		<table border="1">
-			<tr>
-				<th>タスク名</th>
-				<td><select name="task_name">
-				</select></td>
-			</tr>	
-		<tr>
-				<th>価格</th>
-				<td><input type="number" name="price">円</td>
-			</tr>
-		</table>
+	<form action="task-add-servlet" method="POST">
+		■タスク名
+			<input type="text"width="100"name="task">
+			<br>
+			
+		■カテゴリ情報<br>
+			<select name="category_name">
+			<option value="task_name">新商品A:開発プロジェクト</option>
+			<option value="task_name">新商品B:改良プロジェクト</option>
+			</select>
+			<br>
 		
+		■期限<br>
+			<input type="date"name="limit">
+			<br>
+		
+		■担当者情報<br>
+			<select name="user_name">
+			</select>
+			<br>
+		
+		■ステータス情報<br>
+			<select name="status_name">
+			<option value="status_name">未着手</option>
+			<option value="status_name">着手</option>
+			<option value="status_name">完了</option>
+			</select>
+			<br>
+		
+		■メモ<br>
+			<textarea cols="40"rows="2">
+			</textarea>
+			<br>
+		
+		<input type="submit" value="登録実行">
+	</form>
+	<form action="task_display.jsp" method="POST">
+		<input type="submit" value="一覧画面へ">
+	</form>
 </body>
 </html>
