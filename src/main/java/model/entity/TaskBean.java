@@ -1,7 +1,8 @@
 package model.entity;
 
-import java.sql.Timestamp;
+
 import java.util.Date;
+
 
 public class TaskBean {
 	private int task_id;
@@ -11,8 +12,8 @@ public class TaskBean {
 	private String user_id;
 	private String status_code;
 	private String memo;
-	private Timestamp  create_datetime;
-	private Timestamp  update_datetime;
+	private java.sql.Timestamp  create_datetime;
+	private java.sql.Timestamp  update_datetime;
 	
 	
 	public int getTask_id() {
@@ -57,17 +58,17 @@ public class TaskBean {
 	public void setMemo(String memo) {
 		this.memo = memo;
 	}
-	public Timestamp getCreate_datetime() {
+	public java.sql.Timestamp getCreate_datetime() {
 		return create_datetime;
 	}
-	public void setCreate_datetime(Timestamp create_datetime) {
-		this.create_datetime = create_datetime;
+	public void setCreate_datetime(java.sql.Timestamp timestamp) {
+		this.create_datetime = timestamp;
 	}
-	public Timestamp getUpdate_datetime() {
+	public java.sql.Timestamp getUpdate_datetime() {
 		return update_datetime;
 	}
-	public void setUpdate_datetime(Timestamp update_datetime) {
-		this.update_datetime = update_datetime;
+	public void setUpdate_datetime(java.sql.Timestamp timestamp) {
+		this.update_datetime = timestamp;
 	}
 
 	
