@@ -47,7 +47,7 @@ public class Loginservlet extends HttpServlet {
 			} else {
 				// ログイン失敗 → エラーメッセージをセットして login-failure.jsp にフォワード
 				request.setAttribute("error", "ログインに失敗しました。");
-				RequestDispatcher rd = request.getRequestDispatcher("login-failure.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 				rd.forward(request, response);
 			}
 
