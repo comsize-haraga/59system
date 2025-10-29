@@ -12,7 +12,7 @@
 <input type ="submit" value = "登録画面">
 </form>
 
-<form action = "Task_display.jsp" >
+<form action = "task-display-servlet" method = "post" >
 <input type ="submit" value = "一覧表示">
 </form>
 
