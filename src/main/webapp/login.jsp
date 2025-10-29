@@ -12,8 +12,8 @@
     <h3>ユーザーIDとパスワードを入力してください</h3>
 
     <form action="Loginservlet" method="POST">
-        ユーザID: <input type="text" name="id" size="20" required><br>
-        パスワード: <input type="password" name="pw" size="20" required><br><br>
+        ユーザID: <input type="text" name="id" size="24" required><br>
+        パスワード: <input type="password" name="pw" size="24" required><br><br>
         <input type="submit" value="ログイン">
         <input type="reset" value="取消">
     </form>
