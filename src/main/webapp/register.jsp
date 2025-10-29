@@ -22,7 +22,16 @@
 			<br>
 		
 		■期限<br>
-			<input type="date"name="limit">
+			<input type="date" name="limit" id="limitDate">
+			<script>
+			const today = new Date();
+			//昨日より前を選べないようにする
+			const yyyy = today.getFullYear();
+			const mm = String(today.getMonth() + 1).padStart(2, '0');
+			const dd = String(today.getDate()).padStart(2, '0');
+			const minDate = yyyy + '-' + mm + '-' + dd;
+					document.getElementById('limitDate').setAttribute('min', minDate);
+			</script>
 			<br>
 		
 		■担当者情報<br>
