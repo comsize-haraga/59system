@@ -9,7 +9,7 @@ public class ConnectionManager {
 	/**
 	 * データベースURL
 	 */
-	private final static String URL = "jdbc:mysql://localhost:3306/itemdb";
+	private final static String URL = "jdbc:mysql://localhost:3306/task_db";
 
 	/**
 	 * ユーザ
