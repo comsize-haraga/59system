@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ログイン画面</title>
+</head>
+<body>
+    <h1>ログイン画面</h1>
+    <hr>
+    <h3>ユーザーIDとパスワードを入力してください</h3>
+
+    <form action="Loginservlet" method="POST">
+        ユーザID: <input type="text" name="id" size="20"><br>
+        パスワード: <input type="password" name="pw" size="20"><br><br>
+        <input type="submit" value="ログイン">
+        <input type="reset" value="取消">
+    </form>
+</body>
+</html>
