@@ -29,13 +29,13 @@ public class Loginservlet extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 
 		//String username = request.getParameter("name");
-		String userid = request.getParameter("id");
-		String password = request.getParameter("pw");
+		String user_id = request.getParameter("user_id");
+		String password = request.getParameter("password");
 
 		UserDAO dao = new UserDAO();
 
 		try {
-			UserBean user = dao.select(userid, password);
+			UserBean user = dao.select(user_id, password);
 
 			if (user != null) {
 				// ログイン成功
