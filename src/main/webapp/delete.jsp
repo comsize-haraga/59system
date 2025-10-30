@@ -13,6 +13,9 @@
 List<TaskBean> tasklist = (List<TaskBean>) request.getAttribute("tasklist");
 for (TaskBean task : tasklist) {
 %>
+<% 
+session.setAttribute("tasklist", tasklist);
+%>
 <form action="task-delete-servlet" method="POST">
 <table border = "1">
 タスクを削除します。よろしいですか？<br><br>
