@@ -23,12 +23,11 @@ import model.entity.TaskBean;
 public class TaskDeleteServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// リクエストのエンコーディング方式を指定
-		request.setCharacterEncoding("UTF-8");
 		//int taskId = Integer.parseInt(request.getParameter("taskId"));
 		DeleteTaskDAO deletetaskdao = new DeleteTaskDAO();
 		int processingNumber = 0; //処理件数
-		
+//		HttpSession session = request,getSession();
+//		List<TaskBean> tasklist = (List<TaskBean>) session.getAttribute("tasklist");
 		try {
 			// 削除処理
 			processingNumber = deletetaskdao.deleteTask(Integer.parseInt(request.getParameter("taskId")));
@@ -46,6 +45,8 @@ public class TaskDeleteServlet extends HttpServlet {
 			rd.forward(request, response);
 		}
 	}
+	
+	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
