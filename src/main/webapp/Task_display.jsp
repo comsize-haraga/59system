@@ -40,7 +40,7 @@
 	
 	</form></td>
 	
-	<td><form action = "task-delete-servlet" method="post">
+	<td><form action = "task-delete-servlet" method="get">
 	<input type ="hidden" name = id value = <%=bean.getTask_id() %>>
 	<input type="submit" value="削除">
 	
