@@ -1,10 +1,8 @@
-package servlet;
+package model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
-import model.dao.ConnectionManager;
 
 public class DeleteTaskDAO {
 	public int deleteTask(int task_id) 
