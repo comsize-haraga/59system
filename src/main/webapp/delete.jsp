@@ -12,7 +12,7 @@
 <form action="task-delete-servlet" method="POST">
 <table border = "1">
 タスクを削除します。よろしいですか？<br><br>
-<tr><td>タスク名</td><td>task_name</td></tr>
+<tr><td>タスク名</td><td>session.getAttribute(task_name)</td></tr>
 
 <tr><td>カテゴリ情報</td><td>category_name</td></tr>
 
