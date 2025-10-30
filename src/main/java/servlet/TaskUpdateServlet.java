@@ -2,7 +2,10 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -54,9 +57,27 @@ public class TaskUpdateServlet extends HttpServlet {
 		
 		String task_name =  request.getParameter("task_name");
 		String category_name = request.getParameter("category_name");
-		//Date limit = request.getParameter("limit_date");
+		String limit = request.getParameter("limit_date");
 		String user_name = request.getParameter("user_name");
 		String status_name = request.getParameter("status_name");
+		String memo = request.getParameter("memo");
+		
+		 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	        Date orderDate = null;
+		
+	        try {
+				orderDate = sdf.parse(limit);
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+	        
+		TaskBean taskbean = new TaskBean();
+		taskbean.setTask_name(task_name);
+		taskbean.setCategory_name(category_name);
+		taskbean.setLimet_date(orderDate);
+		taskbean.setUser_name(user_name);
+		taskbean.setStatus_name(status_name);
+		taskbean.setMemo(memo);
 		
 		
 	}

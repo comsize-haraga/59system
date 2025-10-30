@@ -55,7 +55,7 @@ public class DisplayDAO {
 		
 		List<TaskBean> tasklist = new ArrayList<>();
 		
-		String sql = "SELECT t1.task_id,t1.task_name,t3.category_name,t1.limit_date,t4.user_name,t2.status_name,t1.memo "
+		String sql = "SELECT t1.task_id,t1.task_name,t1.category_id,t3.category_name,t1.limit_date,t1.user_id,t4.user_name,t1.status_code,t2.status_name,t1.memo "
 				+ "FROM t_task t1 "
 				+ "INNER JOIN m_status t2 ON "
 				+ "t1.status_code = t2.status_code "
@@ -76,9 +76,12 @@ public class DisplayDAO {
 				
 				taskbean.setTask_id(res.getInt("task_id"));
 				taskbean.setTask_name(res.getString("task_name"));
+				taskbean.setCategory_id(res.getInt("category_id"));
 				taskbean.setCategory_name(res.getString("category_name"));
 				taskbean.setLimet_date(res.getDate("limit_date"));
+				taskbean.setUser_id(res.getString("user_id"));
 				taskbean.setUser_name(res.getString("user_name"));
+				taskbean.setStatus_code(res.getString("status_code"));
 				taskbean.setStatus_name(res.getString("status_name"));
 				taskbean.setMemo(res.getString("memo"));
 				
