@@ -4,12 +4,20 @@ import java.util.Date;
 
 public class TaskBean {
 	
+	private int task_id;
 	private String task_name;
 	private String category_name;
 	private Date limet_date;
 	private String user_name;
 	private String status_name;
 	private String memo;
+	
+	public int getTask_id() {
+		return task_id;
+	}
+	public void setTask_id(int task_id) {
+		this.task_id = task_id;
+	}
 	public String getTask_name() {
 		return task_name;
 	}
