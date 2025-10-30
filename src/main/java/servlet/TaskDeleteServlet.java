@@ -25,13 +25,13 @@ public class TaskDeleteServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// リクエストのエンコーディング方式を指定
 		request.setCharacterEncoding("UTF-8");
-		int taskId = Integer.parseInt(request.getParameter("task_id"));
+		//int taskId = Integer.parseInt(request.getParameter("taskId"));
 		DeleteTaskDAO deletetaskdao = new DeleteTaskDAO();
 		int processingNumber = 0; //処理件数
 		
 		try {
 			// 削除処理
-			processingNumber = deletetaskdao.deleteTask(Integer.parseInt(request.getParameter("task_id")));
+			processingNumber = deletetaskdao.deleteTask(Integer.parseInt(request.getParameter("taskId")));
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}

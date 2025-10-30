@@ -16,6 +16,8 @@ for (TaskBean task : tasklist) {
 <form action="task-delete-servlet" method="POST">
 <table border = "1">
 タスクを削除します。よろしいですか？<br><br>
+<input type="hidden" name="taskId" value="<%= task.getTask_id() %>">
+
 <tr><td>タスク名</td><td><%= task.getTask_name() %></td></tr>
 
 <tr><td>カテゴリ情報</td><td><%= task.getCategory_name() %></td></tr>
