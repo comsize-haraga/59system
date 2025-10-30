@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DeleteTaskDAO {
-	public int deleteTask(int task_id) 
+	public int deleteTask(int taskId) 
 			throws SQLException, ClassNotFoundException {
 
 		String sql = "DELETE FROM t_task WHERE task_id = ?";
@@ -13,7 +13,7 @@ public class DeleteTaskDAO {
 		try (Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql);) {
 			// プレースホルダへの値の設定
-			pstmt.setInt(1, task_id);
+			pstmt.setInt(1, taskId);
 			processingNumber = pstmt.executeUpdate();
 		}
 		return processingNumber;

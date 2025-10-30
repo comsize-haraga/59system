@@ -11,11 +11,7 @@
 	<hr>
 	<form action="task-add-servlet" method="POST">
 		■タスク名<br>
-			<select name="task_id">
-			<option value=""></option>
-			<option value="1">未着手サンプルタスク</option>
-			<option value="2">着手サンプル</option>
-			</select>
+			<input type="text"width="100"name="task_name">
 			<br>
 			
 		■カテゴリ情報<br>
@@ -27,7 +23,7 @@
 			<br>
 	
 		■期限<br>
-			<input type="date" name="limit" id="limitDate">
+			<input type="date" name="limit" id="limit_date">
 			<script>
 			const today = new Date();
 			//昨日より前を選べないようにする
@@ -35,7 +31,7 @@
 			const mm = String(today.getMonth() + 1).padStart(2, '0');
 			const dd = String(today.getDate()).padStart(2, '0');
 			const minDate = yyyy + '-' + mm + '-' + dd;
-					document.getElementById('limitDate').setAttribute('min', minDate);
+					document.getElementById('limit_date').setAttribute('min', minDate);
 			</script>
 			<br>
 		
