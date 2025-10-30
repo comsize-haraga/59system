@@ -11,16 +11,21 @@
 	<hr>
 	<form action="task-add-servlet" method="POST">
 		■タスク名<br>
-			<input type="text"width="100"name="task">
+			<select name="task_id">
+			<option value=""></option>
+			<option value="1">未着手サンプルタスク</option>
+			<option value="2">着手サンプル</option>
+			</select>
 			<br>
 			
 		■カテゴリ情報<br>
-			<select name="category_name">
-			<option value="task_name">新商品A:開発プロジェクト</option>
-			<option value="task_name">新商品B:改良プロジェクト</option>
+			<select name="category_id">
+			<option value=""></option>
+			<option value="1">新商品A:開発プロジェクト</option>
+			<option value="2">新商品B:改良プロジェクト</option>
 			</select>
 			<br>
-		
+	
 		■期限<br>
 			<input type="date" name="limit" id="limitDate">
 			<script>
@@ -35,15 +40,20 @@
 			<br>
 		
 		■担当者情報<br>
-			<select name="user_name">
+			<select name="user_id">
+			<option value=""></option>
+			<option value="admin">山田</option>
+			<option value="test1">テスト1</option>
+			<option value="test2">テスト2</option>
 			</select>
 			<br>
 		
 		■ステータス情報<br>
-			<select name="status_name">
-			<option value="status_name">未着手</option>
-			<option value="status_name">着手</option>
-			<option value="status_name">完了</option>
+			<select name="status_code">
+			<option value=""></option>
+			<option value="00">未着手</option>
+			<option value="50">着手</option>
+			<option value="99">完了</option>
 			</select>
 			<br>
 		
