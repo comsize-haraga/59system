@@ -32,26 +32,24 @@
 		<td align="center"> <%= bean.getUser_name() %> </td>
 		<td align="center"> <%= bean.getStatus_name() %> </td>
 		<td align="center"> <%= bean.getMemo() %> </td>
-		 </tr>
 		
+	<td><form action = "task-update-servlet" method="get">
+	<%// 主キー受け取り %>
+	<input type ="hidden" name = id value = <%=bean.getTask_id() %>>
+	<input type="submit" value="編集">
 	
+	</form></td>
+	
+	<td><form action = "task-delete-servlet" method="post">
+	<input type ="hidden" name = id value = <%=bean.getTask_id() %>>
+	<input type="submit" value="削除">
+	
+	</form></td>
+	</tr>
 	<% } %>
 	
 	</table>
 	
-	<br>
-	
-	<form action = "update.jsp" method="get">
-	
-	<input type="submit" value="編集">
-	
-	</form>
-	
-	<form action = "task-delete-servlet" method="post">
-	
-	<input type="submit" value="削除">
-	
-	</form>
 	
 	<form action = "menu.jsp" method="post">
 	
