@@ -9,7 +9,7 @@
 <body>
 	<h1>タスク登録画面</h1>
 	<hr>
-	<form action="task-add-servlet" method="POST">
+	<form action="register-servlet" method="POST">
 		■タスク名<br>
 			<input type="text"width="100"name="task_name">
 			<br>

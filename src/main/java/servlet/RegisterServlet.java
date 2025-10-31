@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,6 +31,7 @@ public class RegisterServlet extends HttpServlet {
 		RegisterDAO rgd = new RegisterDAO();
 		TaskBean taskBean = new TaskBean();
 		
+		
 		//入力した値を変数に入れる
 		String taskName = request.getParameter("task_name");
 		int categoryId = Integer.parseInt(request.getParameter("category_id"));
@@ -37,7 +39,7 @@ public class RegisterServlet extends HttpServlet {
 		String strLimit = request.getParameter("limit");
 		SimpleDateFormat sdFormat = new SimpleDateFormat(strLimit );
 		String userId = request.getParameter("user_id");
-		int statusCode = Integer.parseInt(request.getParameter("status_code"));
+		String statusCode = request.getParameter("status_code");
 		String memo = request.getParameter("memo");
 		try {
 			Date limit = sdFormat.parse(strLimit);
@@ -49,6 +51,13 @@ public class RegisterServlet extends HttpServlet {
 			taskBean.setMemo(memo);
 			try {
 				int result = rgd.register(taskBean);
+				if(result == 1) {
+					RequestDispatcher rd = request.getRequestDispatcher("register-success.jsp");
+					rd.forward(request, response);
+				}else {
+					RequestDispatcher rd = request.getRequestDispatcher("register-failure.jsp");
+					rd.forward(request, response);
+				}
 			
 			} catch (ClassNotFoundException | SQLException e) {
 				// TODO 自動生成された catch ブロック
