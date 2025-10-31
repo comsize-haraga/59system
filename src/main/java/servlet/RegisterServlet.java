@@ -2,9 +2,6 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -35,17 +32,20 @@ public class RegisterServlet extends HttpServlet {
 		//入力した値を変数に入れる
 		String taskName = request.getParameter("task_name");
 		int categoryId = Integer.parseInt(request.getParameter("category_id"));
-		
-		String strLimit = request.getParameter("limit");
-		SimpleDateFormat sdFormat = new SimpleDateFormat(strLimit );
+		String strLimit = request.getParameter("limit_date");
 		String userId = request.getParameter("user_id");
 		String statusCode = request.getParameter("status_code");
 		String memo = request.getParameter("memo");
-		try {
-			Date limit = sdFormat.parse(strLimit);
+		//yyyy/mm/ddの可能性あり
+		//SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        //Date orderDate = null;
+        
+		
+			
+			
 			taskBean.setTask_name(taskName);
 			taskBean.setCategory_id(categoryId);
-			taskBean.setLimet_date(limit);
+			taskBean.setLimit(strLimit);
 			taskBean.setUser_id(userId);
 			taskBean.setStatus_code(statusCode);
 			taskBean.setMemo(memo);
@@ -64,13 +64,8 @@ public class RegisterServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			
-		} catch (ParseException e) {
-			// TODO 自動生成された catch ブロック
-			e.printStackTrace();
-		}
 	
-		
-		//taskbeanに値をセットする
+
 		
 				
 			

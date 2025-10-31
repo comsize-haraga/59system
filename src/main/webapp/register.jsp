@@ -23,7 +23,7 @@
 			<br>
 	
 		■期限<br>
-			<input type="date" name="limit" id="limit_date">
+			<input type="date" name="limit_date">
 			<script>
 			const today = new Date();
 			//昨日より前を選べないようにする
@@ -54,7 +54,7 @@
 			<br>
 		
 		■メモ<br>
-			<textarea cols="40"rows="2">
+			<textarea cols="40"rows="2" name="memo">
 			</textarea>
 			<br>
 		
