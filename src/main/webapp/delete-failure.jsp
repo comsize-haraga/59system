@@ -7,9 +7,6 @@
 <title>削除失敗</title>
 </head>
 <body>
-<title>削除失敗</title>
-</head>
-<body>
 <h1>削除失敗</h1>
 <hr>
 <%
