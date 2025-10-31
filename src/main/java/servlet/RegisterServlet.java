@@ -30,26 +30,22 @@ public class RegisterServlet extends HttpServlet {
 		
 		
 		//入力した値を変数に入れる
-		String taskName = request.getParameter("task_name");
-		int categoryId = Integer.parseInt(request.getParameter("category_id"));
-		String strLimit = request.getParameter("limit_date");
-		String userId = request.getParameter("user_id");
-		String statusCode = request.getParameter("status_code");
-		String memo = request.getParameter("memo");
-		//yyyy/mm/ddの可能性あり
-		//SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        //Date orderDate = null;
-        
 		
-			
-			
-			taskBean.setTask_name(taskName);
-			taskBean.setCategory_id(categoryId);
-			taskBean.setLimit(strLimit);
-			taskBean.setUser_id(userId);
-			taskBean.setStatus_code(statusCode);
-			taskBean.setMemo(memo);
 			try {
+				String taskName = request.getParameter("task_name");
+				int categoryId = Integer.parseInt(request.getParameter("category_id"));
+				String strLimit = request.getParameter("limit_date");
+				String userId = request.getParameter("user_id");
+				String statusCode = request.getParameter("status_code");
+				String memo = request.getParameter("memo");
+				
+		        	//if() {
+					taskBean.setTask_name(taskName);
+					taskBean.setCategory_id(categoryId);
+					taskBean.setLimit(strLimit);
+					taskBean.setUser_id(userId);
+					taskBean.setStatus_code(statusCode);
+					taskBean.setMemo(memo);
 				int result = rgd.register(taskBean);
 				if(result == 1) {
 					RequestDispatcher rd = request.getRequestDispatcher("register-success.jsp");
@@ -59,10 +55,14 @@ public class RegisterServlet extends HttpServlet {
 					rd.forward(request, response);
 				}
 			
-			} catch (ClassNotFoundException | SQLException e) {
-				// TODO 自動生成された catch ブロック
+			} catch (ClassNotFoundException | SQLException | NumberFormatException e) {
+				RequestDispatcher rd = request.getRequestDispatcher("register-failure.jsp");
+				rd.forward(request, response);
 				e.printStackTrace();
 			}
+        	//}else {
+        		
+        	//}
 			
 	
 
