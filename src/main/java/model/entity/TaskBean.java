@@ -8,6 +8,7 @@ public class TaskBean {
 	private String task_name;
 	private int category_id;
 	private String category_name;
+	private String limit;
 	private Date limet_date;
 	private String user_id;
 	private String user_name;
@@ -16,6 +17,12 @@ public class TaskBean {
 	private String memo;
 	
 	
+	public String getLimit() {
+		return limit;
+	}
+	public void setLimit(String limit) {
+		this.limit = limit;
+	}
 	public String getUser_id() {
 		return user_id;
 	}

@@ -17,17 +17,20 @@ public class UpdateDAO {
 				+ "memo = ? ,WHERE task_id = ?";
 		try (Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql);) {
-			
+			 if (bean.getLimet_date() != null && !bean.getLimit().isEmpty()) {
+	                java.sql.Date sqlDate = java.sql.Date.valueOf(bean.getLimit());
+	                
 			pstmt.setString(1,bean.getTask_name());
 			pstmt.setInt(2,bean.getCategory_id());
-			pstmt.setDate(3,(Date) bean.getLimet_date());
+			pstmt.setDate(3,sqlDate);
 			pstmt.setString(4,bean.getUser_id());
 			pstmt.setString(5,bean.getStatus_code());
 			pstmt.setString(6,bean.getMemo());
 			pstmt.setInt(7,bean.getTask_id());
 			
 			cnt = pstmt.executeUpdate();
-		}
+			 }	
+			 }
 		return cnt;
 		
 	}
