@@ -1,7 +1,6 @@
 package model.dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -14,10 +13,11 @@ public class UpdateDAO {
 		
 		String sql = "UPDATE t_task SET task_name   = ?, category_id = ?, "
 				+ "limit_date  = ?,user_id  = ?,status_code = ?,"
-				+ "memo = ? ,WHERE task_id = ?";
+				+ "memo = ? WHERE task_id = ?";
 		try (Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql);) {
-			 if (bean.getLimet_date() != null && !bean.getLimit().isEmpty()) {
+			//String型のlimitをDate型に変換
+			 if (bean.getLimit() != null && !bean.getLimit().isEmpty()) {
 	                java.sql.Date sqlDate = java.sql.Date.valueOf(bean.getLimit());
 	                
 			pstmt.setString(1,bean.getTask_name());
