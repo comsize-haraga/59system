@@ -25,7 +25,7 @@
 			</tr>
 			<tr>
 				<td>カテゴリ情報</td>
-				<td><select name="category_name">
+				<td><select name="category_id">
 					<option value=<%=bean.getCategory_id()%>>
 						<%=bean.getCategory_name()%>
 					</option>
@@ -40,12 +40,12 @@
 			</tr>
 			<tr>
 				<td>担当者情報</td>
-				<td><input type="text" name="user_name"
+				<td><input type="text" name="user_id"
 					value=<%=bean.getUser_id()%>></td>
 			</tr>
 			<tr>
 				<td>ステータス情報</td>
-				<td><select name="status_name">
+				<td><select name="status_code">
 					<option value=<%=bean.getStatus_code()%>><%=bean.getStatus_name()%></option>
 					<option value=00>未着手</option>
 					<option value=50>着手</option>
@@ -54,9 +54,11 @@
 			</tr>
 			<tr>
 				<td>メモ</td>
-				<td><input type="text" name="comment" style="width: 300px"
+				<td><input type="text" name="memo" style="width: 300px"
 					value=<%=bean.getMemo()%>></td>
+				<td><input type = "hidden" name = id value = <%= bean.getTask_id() %>></td>	
 			</tr>
+			
 			<%
 			}
 			%>
