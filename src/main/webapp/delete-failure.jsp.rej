@@ -1,0 +1,11 @@
+diff a/src/main/webapp/delete-failure.jsp b/src/main/webapp/delete-failure.jsp	(rejected hunks)
+@@ -7,6 +7,9 @@
+ <title>削除失敗</title>
+ </head>
+ <body>
++<title>削除失敗</title>
++</head>
++<body>
+ <h1>削除失敗</h1>
+ <hr>
+ <%
