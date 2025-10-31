@@ -54,8 +54,7 @@
 			<br>
 		
 		■メモ<br>
-			<textarea cols="40"rows="2" name="memo">
-			</textarea>
+			<textarea cols="40"rows="2" name="memo"></textarea>
 			<br>
 		
 		<input type="submit" value="登録実行">
